@@ -1,6 +1,7 @@
 package one.digitalinnovation.registerapi.controller;
 
 import one.digitalinnovation.registerapi.dto.MessageResponseDTO;
+import one.digitalinnovation.registerapi.dto.request.PersonDTO;
 import one.digitalinnovation.registerapi.entity.Person;
 import one.digitalinnovation.registerapi.repository.PersonRepository;
 import one.digitalinnovation.registerapi.service.PersonService;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/talia")
@@ -25,7 +28,7 @@ public class RegisterController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public MessageResponseDTO createPerson(@RequestBody Person person) {
-        return personService.createPerson(person);
+    public MessageResponseDTO createPerson(@RequestBody @Valid PersonDTO personDTO) {
+        return personService.createPerson(personDTO);
     }
 }
