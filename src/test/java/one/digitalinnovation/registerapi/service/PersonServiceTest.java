@@ -15,6 +15,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import static one.digitalinnovation.registerapi.utils.PersonUtils.createFakeDTO;
 import static one.digitalinnovation.registerapi.utils.PersonUtils.createFakeEntity;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -31,12 +32,12 @@ public class PersonServiceTest {
         PersonDTO personDTO = createFakeDTO();
         Person expectedSavedPerson = createFakeEntity();
 
-        when(personRepository.save(expectedSavedPerson)).thenReturn(expectedSavedPerson);
+        when(personRepository.save(any(Person.class))).thenReturn(expectedSavedPerson);
 
         MessageResponseDTO expectedSuccessesMessage = createExpectedMessageResponse(expectedSavedPerson.getId());
         MessageResponseDTO successMessage = personService.createPerson(personDTO);
 
-/*   19:34     Assertions.assertEq*/
+        assertEquals(expectedSuccessesMessage, successMessage);
     }
 
     private MessageResponseDTO createExpectedMessageResponse(Long id) {
