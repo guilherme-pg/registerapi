@@ -3,18 +3,14 @@ package one.digitalinnovation.registerapi.service;
 import lombok.AllArgsConstructor;
 import one.digitalinnovation.registerapi.dto.MessageResponseDTO;
 import one.digitalinnovation.registerapi.dto.request.PersonDTO;
-import one.digitalinnovation.registerapi.entity.Person;
+import one.digitalinnovation.registerapi.entities.Person;
 import one.digitalinnovation.registerapi.exception.PersonNotFoundException;
 import one.digitalinnovation.registerapi.mapper.PersonMapper;
 import one.digitalinnovation.registerapi.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
-import javax.persistence.PersistenceException;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service

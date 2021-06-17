@@ -2,7 +2,7 @@ package one.digitalinnovation.registerapi.mapper;
 
 
 import one.digitalinnovation.registerapi.dto.request.PersonDTO;
-import one.digitalinnovation.registerapi.entity.Person;
+import one.digitalinnovation.registerapi.entities.Person;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
