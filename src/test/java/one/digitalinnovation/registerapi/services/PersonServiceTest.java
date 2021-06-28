@@ -1,16 +1,14 @@
-package one.digitalinnovation.registerapi.service;
+package one.digitalinnovation.registerapi.services;
 
-import one.digitalinnovation.registerapi.dto.MessageResponseDTO;
+import one.digitalinnovation.registerapi.dto.mapper.PersonMapper;
 import one.digitalinnovation.registerapi.dto.request.PersonDTO;
+import one.digitalinnovation.registerapi.dto.response.MessageResponseDTO;
 import one.digitalinnovation.registerapi.entities.Person;
 import one.digitalinnovation.registerapi.repository.PersonRepository;
-import one.digitalinnovation.registerapi.utils.PersonUtils;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static one.digitalinnovation.registerapi.utils.PersonUtils.createFakeDTO;
@@ -24,6 +22,9 @@ public class PersonServiceTest {
     @Mock
     private PersonRepository personRepository;
 
+    @Mock
+    private PersonMapper personMapper;
+
     @InjectMocks
     private PersonService personService;
 
@@ -32,6 +33,7 @@ public class PersonServiceTest {
         PersonDTO personDTO = createFakeDTO();
         Person expectedSavedPerson = createFakeEntity();
 
+        when(personMapper.toModel(personDTO)).thenReturn(expectedSavedPerson);
         when(personRepository.save(any(Person.class))).thenReturn(expectedSavedPerson);
 
         MessageResponseDTO expectedSuccessesMessage = createExpectedMessageResponse(expectedSavedPerson.getId());

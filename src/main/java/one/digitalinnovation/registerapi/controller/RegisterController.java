@@ -1,10 +1,10 @@
 package one.digitalinnovation.registerapi.controller;
 
 import lombok.AllArgsConstructor;
-import one.digitalinnovation.registerapi.dto.MessageResponseDTO;
+import one.digitalinnovation.registerapi.dto.response.MessageResponseDTO;
 import one.digitalinnovation.registerapi.dto.request.PersonDTO;
 import one.digitalinnovation.registerapi.exception.PersonNotFoundException;
-import one.digitalinnovation.registerapi.service.PersonService;
+import one.digitalinnovation.registerapi.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

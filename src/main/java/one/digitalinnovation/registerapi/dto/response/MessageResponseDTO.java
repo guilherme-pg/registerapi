@@ -1,4 +1,4 @@
-package one.digitalinnovation.registerapi.dto;
+package one.digitalinnovation.registerapi.dto.response;
 
 
 import lombok.Builder;
