@@ -1,4 +1,4 @@
-package one.digitalinnovation.registerapi.mapper;
+package one.digitalinnovation.registerapi.dto.mapper;
 
 
 import one.digitalinnovation.registerapi.dto.request.PersonDTO;

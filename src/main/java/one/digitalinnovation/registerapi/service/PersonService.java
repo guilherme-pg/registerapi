@@ -5,7 +5,7 @@ import one.digitalinnovation.registerapi.dto.MessageResponseDTO;
 import one.digitalinnovation.registerapi.dto.request.PersonDTO;
 import one.digitalinnovation.registerapi.entities.Person;
 import one.digitalinnovation.registerapi.exception.PersonNotFoundException;
-import one.digitalinnovation.registerapi.mapper.PersonMapper;
+import one.digitalinnovation.registerapi.dto.mapper.PersonMapper;
 import one.digitalinnovation.registerapi.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
