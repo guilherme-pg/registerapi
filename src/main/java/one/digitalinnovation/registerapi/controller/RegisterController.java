@@ -13,7 +13,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/talia")
+@RequestMapping("/registerapi")
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class RegisterController {
 
