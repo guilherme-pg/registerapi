@@ -1,5 +1,8 @@
 ## API for registering people
-presents the operations:
+
+** Project developed for the Digital Innovation One Bootcamp 'Code Anywhere'.**
+
+Presents the operations:
 - create;
 - read;
 - update;
